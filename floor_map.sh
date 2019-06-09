@@ -67,4 +67,4 @@ done
 printf "\n"
 ((seat--))
 done
-printf "		18 19 20 21 22 23 24 25"
+printf "		18 19 20 21 22 23 24 25\n"
