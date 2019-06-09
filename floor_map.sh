@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 #Dependency: run "brew install coreutils"
-#run "sh pc_monitor c4r10"
+#run "sh floor_map.sh -h"
 
 counter=0
 seat=1
