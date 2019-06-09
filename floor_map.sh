@@ -10,11 +10,9 @@ while :
 do
 	if [[ ${seat} == 1 && ${row} -lt 11 ]]
 		then printf ${row}"  "
-		else printf ${row}" "
 	fi
-	if [[ ${seat} == 1 && ${row} -lt 11 ]]
-		then printf ${row}"  "
-		else printf ${row}" "
+	if [[ ${seat} == 1 && ${row} -gt 11 ]]
+		then printf ${row}" "
 	fi
 	if gtimeout 0.01 ping $1r${row}s${seat} -c 1 | grep -q "64"
 		then printf "⚪"
