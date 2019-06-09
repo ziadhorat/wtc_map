@@ -44,7 +44,7 @@ do
 	((seat++))
 	((counter++))
 done
-printf "\n\n"
+printf "\n"
 seat=5
 while [ $seat -ge 1 ]
 do
@@ -61,9 +61,10 @@ do
 		else printf "❌"
 	fi
 fi
-	printf '   '
+	printf ' '
 	((row++))
 done
 printf "\n"
 ((seat--))
 done
+printf "		18 19 20 21 22 23 24 25"
