@@ -88,11 +88,13 @@ do
 		else printf "❌"
 	fi
 	if [[ ${row} == 1 && ${seat} == 10 ]]
+	then
 		((row++))
 		seat=1
 		printf "\n"
 	fi
 	if [[ ${seat} == 11 ]]
+	then
 		((row++))
 		seat=1
 		printf "\n"
