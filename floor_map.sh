@@ -1,6 +1,5 @@
 #!/usr/bin/sh
 #Dependency: run "brew install coreutils"
-#run "sh floor_map.sh -h"
 
 case "$1" in
 	-h|--help)
@@ -80,6 +79,16 @@ printf "		18 19 20 21 22 23 24 25\n"
 		;;
 	-5)
 		echo "-----FLOOR 5-----"
+row=1
+seat=1
+while [ $row -le 12 ]
+do
+	if gtimeout 0.01 ping c5r${row}s${seat} -c 1 | grep -q "64"
+		then printf "💻"
+		else printf "❌"
+	fi
+done
+printf "\n"
 		;;
 	*)
 		echo "Flag "$1" doesn't exist"
