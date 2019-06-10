@@ -2,6 +2,15 @@
 #Dependency: run "brew install coreutils"
 #run "sh floor_map.sh -h"
 
+case "$1" in
+	-h|--help)
+		echo "----HELP-----"
+		echo "Floor 4:\tsh "`basename "$0"`" -4"
+		echo "Floor 5:\tsh "`basename "$0"`" -5"
+		echo "Help:\t\tsh "`basename "$0"`" -h"
+		;;
+	-4)
+		echo "-----FLOOR 4-----"
 counter=0
 seat=1
 row=1
@@ -25,7 +34,7 @@ do
 			printf "            " 
 			seat=6
 	fi
-	if gtimeout 0.01 ping $1r${row}s${seat} -c 1 | grep -q "64"
+	if gtimeout 0.01 ping c4r${row}s${seat} -c 1 | grep -q "64"
 		then printf "💻"
 		else printf "❌"
 	fi
@@ -56,7 +65,7 @@ do
 	then
 		printf "  "
 	else 
-	if gtimeout 0.01 ping $1r${row}s${seat} -c 1 | grep -q "64"
+	if gtimeout 0.01 ping c4r${row}s${seat} -c 1 | grep -q "64"
 		then printf "💻"
 		else printf "❌"
 	fi
@@ -68,3 +77,12 @@ printf "\n"
 ((seat--))
 done
 printf "		18 19 20 21 22 23 24 25\n"
+		;;
+	-5)
+		echo "-----FLOOR 5-----"
+		;;
+	*)
+		echo "Flag "$1" doesn't exist"
+		echo "Help:\t\tsh "`basename "$0"`" -h"
+		;;
+esac
