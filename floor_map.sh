@@ -95,11 +95,17 @@ do
 		seat=1
 		printf "\n"${row}"  "
 	fi
-	if [[ ${seat} == 12 && ${row} -le 10 ]]
+	if [[ ${seat} == 12 && ${row} -lt 9 ]]
 	then
 		((row++))
 		seat=1
 		printf "\n"${row}"  "
+	fi
+	if [[ ${seat} == 12 && ${row} -gt 8 ]]
+	then
+		((row++))
+		seat=1
+		printf "\n"${row}" "
 	fi
 	if [[ ${seat} == 6 ]]
 		then printf "  "
