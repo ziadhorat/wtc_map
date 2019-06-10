@@ -82,7 +82,7 @@ printf "		18 19 20 21 22 23 24 25\n"
 row=1
 seat=1
 printf ${row}"  "
-while [ $row -le 11 ]
+while [[ $row -le 11 && $seat != 12 ]]
 do
 	if gtimeout 0.01 ping c5r${row}s${seat} -c 1 | grep -q "64"
 		then printf "💻"
@@ -95,7 +95,7 @@ do
 		seat=1
 		printf "\n"${row}"  "
 	fi
-	if [[ ${seat} == 12 && ${row} -le 11 ]]
+	if [[ ${seat} == 12 && ${row} -le 10 ]]
 	then
 		((row++))
 		seat=1
