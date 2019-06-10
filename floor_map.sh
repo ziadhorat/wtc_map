@@ -81,7 +81,7 @@ printf "		18 19 20 21 22 23 24 25\n"
 		echo "-----FLOOR 5-----"
 row=1
 seat=1
-while [ $row -le 12 ]
+while [ $row -le 11 ]
 do
 	if gtimeout 0.01 ping c5r${row}s${seat} -c 1 | grep -q "64"
 		then printf "💻"
@@ -99,6 +99,7 @@ do
 		seat=1
 		printf "\n"
 	fi
+	((seat++))
 done
 printf "\n"
 		;;
