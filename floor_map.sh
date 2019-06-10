@@ -87,6 +87,16 @@ do
 		then printf "💻"
 		else printf "❌"
 	fi
+	if [[ ${row} == 1 && ${seat} == 10 ]]
+		((row++))
+		seat=1
+		printf "\n"
+	fi
+	if [[ ${seat} == 11 ]]
+		((row++))
+		seat=1
+		printf "\n"
+	fi
 done
 printf "\n"
 		;;
