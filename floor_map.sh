@@ -88,19 +88,22 @@ do
 		then printf "💻"
 		else printf "❌"
 	fi
-	if [[ ${row} == 1 && ${seat} == 10 ]]
-	then
-		((row++))
-		seat=1
-		printf "\n"${row}"  "
-	fi
-	if [[ ${seat} == 11 && ${row} -le 9 ]]
-	then
-		((row++))
-		seat=1
-		printf "\n"${row}"  "
-	fi
 	((seat++))
+	if [[ ${row} == 1 && ${seat} == 11 ]]
+	then
+		((row++))
+		seat=1
+		printf "\n"${row}"  "
+	fi
+	if [[ ${seat} == 12 && ${row} -le 11 ]]
+	then
+		((row++))
+		seat=1
+		printf "\n"${row}"  "
+	fi
+	if [[ ${seat} == 6 ]]
+		then printf "  "
+	fi
 done
 printf "\n"
 		;;
