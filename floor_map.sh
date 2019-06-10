@@ -3,13 +3,13 @@
 
 case "$1" in
 	-h|--help)
-		echo "----HELP-----"
+		echo "---------------HELP---------------"
 		echo "Floor 4:\tsh "`basename "$0"`" -4"
 		echo "Floor 5:\tsh "`basename "$0"`" -5"
 		echo "Help:\t\tsh "`basename "$0"`" -h"
 		;;
 	-4)
-		echo "-----FLOOR 4-----"
+		echo "----------FLOOR 4----------"
 counter=0
 seat=1
 row=1
@@ -78,7 +78,7 @@ done
 printf "		18 19 20 21 22 23 24 25\n"
 		;;
 	-5)
-		echo "-----FLOOR 5-----"
+		echo "----------FLOOR 5----------"
 row=1
 seat=1
 printf ${row}"  "
@@ -101,7 +101,7 @@ do
 		seat=1
 		printf "\n"${row}"  "
 	fi
-	if [[ ${seat} == 12 && ${row} -gt 8 ]]
+	if [[ ${seat} == 12 && ${row} -gt 8 && ${row} -le 10 ]]
 	then
 		((row++))
 		seat=1
